@@ -7,3 +7,8 @@ Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo menu de
 ---
 
 ## Branch 01: Classes, Objetos, Propriedades e Metodos.
+
+- Classes e Objetos
+- Propriedades e métodos
+- Tipos de dados
+- Uso do this para acessar recursos de dentro da própria classes.
