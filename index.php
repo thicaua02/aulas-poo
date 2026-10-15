@@ -1,3 +1,28 @@
+<?php
+// Importando a classe
+require_once "src/Filme.php";
+
+// Criando um OBJETO ou uma INSTÂNCIA a partir da classe Filme
+$filme1 = new Filme();
+
+// Atribuir valores às propriedades do objeto
+$filme1->titulo = "Interestelar";
+$filme1->genero = "Ficção Científica";
+$filme1->ano = 2014;
+
+$filme2 = new Filme();
+$filme2->titulo = "Toy Story";
+$filme2->genero = "Aventura";
+$filme2->ano = 1995;
+
+$filme3 = new Filme();
+$filme3->titulo = "Os Vingadores";
+$filme3->genero = "Super-herói";
+$filme3->ano = 2012;
+
+$filmes = [$filme1, $filme2, $filme3];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,11 +42,13 @@
         </header>
 
         <div class="filmes">
-            
-            <article>
-
-            </article>
-
+            <?php foreach ($filmes as $filme): ?>
+                <article class="card-filme">
+                    <span class="genero"><?= $filme->genero ?></span>
+                    <h2> <?= $filme->titulo ?></h2>
+                    <p class="ano">Lançamento: <?= $filme->ano ?></p>
+                </article>
+            <?php endforeach; ?>
         </div>
 
         <hr>
