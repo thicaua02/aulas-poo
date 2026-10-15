@@ -8,7 +8,6 @@ $filme2 = new Filme();
 $filme3 = new Filme();
 
 // Atribuir valores às propriedades do objeto
-
 $filme1->setTitulo("Interestelar");
 $filme1->setGenero("Ficção Científica");
 $filme1->setAno(2014);
