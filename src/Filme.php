@@ -15,6 +15,10 @@ class Filme
         $this->titulo = $titulo;
         $this->genero = $genero;
         $this->ano = $ano;
+
+        // Dica: podemos (ou, dependendo do caso, devemos) usar os setters
+        // através do construtor.
+        //$this->setAno($ano);
     }
 
     public function ehClassico() : bool {
