@@ -4,7 +4,7 @@ class Conteudo {
     protected string $genero;
     protected int $ano;
 
-    protected function __construct(string $titulo, string $genero, int $ano) {
+    public function __construct(string $titulo, string $genero, int $ano) {
         $this->titulo = $titulo;
         $this->genero = $genero;
         $this->ano = $ano;
