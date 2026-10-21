@@ -8,13 +8,11 @@ require_once "src/Serie.php";
 $filme1 = new Filme("Interestelar", "Ficção Científica", 2014, 100);
 $filme2 = new Filme("Toy Story", "Aventura", 1995, 100);
 $filme3 = new Filme("Os Vingadores", "Super-herói", 2012, 100);
-$serie1 = new Serie("Hora de Aventura", "Fantasia", 2000, 9);
+$serie1 = new Serie("Hora de Aventura", "Fantasia", 1999, 9);
 $serie2 = new Serie("The flash", "Ação", 2012, 10);
 
-echo "<pre>";
-var_dump($serie1, $serie2);
-echo "</pre>";
 $filmes = [$filme1, $filme2, $filme3];
+$series = [$serie1, $serie2];
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +41,22 @@ $filmes = [$filme1, $filme2, $filme3];
                     <p class="ano">Lançamento: <?= $filme->getAno() ?></p>
 
                     <?php if($filme->ehClassico()): ?>
+                        <span class="classico">Classico</span>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
+        </div>
+        
+        <br>
+
+        <div class="series">
+            <?php foreach ($series as $serie): ?>
+                <article class="card-serie">
+                    <span class="genero"><?= $serie->getGenero() ?></span>
+                    <h2> <?= $serie->getTitulo() ?></h2>
+                    <p class="ano">Lançamento: <?= $serie->getAno() ?></p>
+
+                    <?php if($serie->ehClassico()): ?>
                         <span class="classico">Classico</span>
                     <?php endif; ?>
                 </article>
