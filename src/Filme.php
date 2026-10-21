@@ -1,51 +1,8 @@
 <?php
 // src/Filme.php
 
-class Filme
-{
-    private string $titulo;
-    private string $genero;
-    private int $ano;
-
-    // Método CONSTRUTOR: a finalidade deste método
-    // é receber dados (através de parãmetros) no momento da criação do onjeto
-    // e atribuí-los às propriedades. Este método NÃO POSSUI retorno.
-    public function __construct(string $titulo, string $genero, int $ano) {
-        // Atribuindo os valores recebidos pelos parâmetros ás propriedades
-        $this->titulo = $titulo;
-        $this->genero = $genero;
-        $this->ano = $ano;
-
-        // Dica: podemos (ou, dependendo do caso, devemos) usar os setters
-        // através do construtor.
-        //$this->setAno($ano);
-    }
-
-    public function ehClassico() : bool {
-        return $this->ano < 2000;
-    }
-
-    public function getTitulo() : string {
-        return $this->titulo;
-    }
-
-    public function getGenero () : string {
-        return $this->genero;
-    }
-
-    public function getAno () : int {
-        return $this->ano;
-    }
-
-    public function setTitulo (string $titulo) : void {
-        $this->titulo = $titulo;
-    }
-    public function setGenero (string $genero) : void {
-        $this->genero = $genero;
-    }
-    public function setAno (string $ano) : void {
-        if ($ano > 0) {
-            $this->ano = $ano;
-        }
-    }
+class Filme extends Conteudo {
+    
 }
+
+?>
