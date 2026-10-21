@@ -16,6 +16,11 @@ class Serie extends Conteudo {
     public function setTemporadas(int $temporadas) : void {
         $this->temporadas = $temporadas;
     }
+
+    public function getDescricao() : string {
+        // O filme Duna possui 100 minutos de duração
+        return "O filme $this->titulo possui $this->temporadas temporadas.";
+    }
 }
 
 ?>
