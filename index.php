@@ -2,12 +2,18 @@
 // Importando a classe
 require_once "src/Conteudo.php";
 require_once "src/Filme.php";
+require_once "src/Serie.php";
 
 // Criando um OBJETO ou uma INSTÂNCIA a partir da classe Filme
 $filme1 = new Filme("Interestelar", "Ficção Científica", 2014, 100);
 $filme2 = new Filme("Toy Story", "Aventura", 1995, 100);
 $filme3 = new Filme("Os Vingadores", "Super-herói", 2012, 100);
+$serie1 = new Serie("Hora de Aventura", "Fantasia", 2000, 9);
+$serie2 = new Serie("The flash", "Ação", 2012, 10);
 
+echo "<pre>";
+var_dump($serie1, $serie2);
+echo "</pre>";
 $filmes = [$filme1, $filme2, $filme3];
 ?>
 

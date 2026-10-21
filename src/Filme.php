@@ -13,6 +13,14 @@ class Filme extends Conteudo {
         parent::__construct($titulo, $genero, $ano);
         $this->duracao = $duracao;
     }
+
+    public function getDuracao() : int {
+        return $this->duracao;
+    }
+
+    public function setDuracao(int $duracao) : void {
+        $this->duracao = $duracao;
+    }
 }
 
 ?>
