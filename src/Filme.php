@@ -22,6 +22,7 @@ class Filme extends Conteudo {
         $this->duracao = $duracao;
     }
 
+    // Implementando obrigatóriamente do método getDescricao em Filme.
     public function getDescricao() : string {
         // O filme Duna possui 100 minutos de duração
         return "O filme $this->titulo possui $this->duracao minutos";

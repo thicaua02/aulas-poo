@@ -29,14 +29,23 @@ abstract class Conteudo {
     public function setTitulo (string $titulo) : void {
         $this->titulo = $titulo;
     }
+
     public function setGenero (string $genero) : void {
         $this->genero = $genero;
     }
+
     public function setAno (string $ano) : void {
         if ($ano > 0) {
             $this->ano = $ano;
         }
     }
+
+    // Declarando um método abstrato
+    /* Criamos um "contrato", uma obrigatóridade para as subclasses.
+    Ou seja, elas serão OBRIGADAS a implementar este método!
+    Obs: não colocamos chaves, pois aqui é apenas a declaração (ou assinatura) 
+    do metodo */
+    abstract public function getDescricao (): string;
 }
 
 ?>
