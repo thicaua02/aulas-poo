@@ -72,14 +72,7 @@ $series = [$serie1, $serie2];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Classe-pai (superclasse) <b>Conteúdo</b>;</li>
-                <li>Classe-filha (subclasse) <b>Filme</b>;</li>
-                <li>Herança utilizando <b>extends</b>;</li>
-                <li>Herança com propriedades e métodos;</li>
-                <li>Visibilidade <b>protected</b> na superclasse permitindo o 
-                acesso através das subclasses;</li>
-                <li>Construtor da superclasse <b>parent::__construct()</b>;</li>
-                <li>Propriedades específicasc das subclasses.</li>
+                
             </ul>
         </div>
 
