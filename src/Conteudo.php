@@ -1,5 +1,5 @@
 <?php
-class Conteudo {
+abstract class Conteudo {
     protected string $titulo;
     protected string $genero;
     protected int $ano;

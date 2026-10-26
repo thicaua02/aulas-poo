@@ -13,6 +13,12 @@ $serie2 = new Serie("The flash", "Ação", 2012, 10);
 
 $filmes = [$filme1, $filme2, $filme3];
 $series = [$serie1, $serie2];
+
+/* Como a classe Conteudo foi definida como abstrata, a linha abaixo não
+funcionará pois não é possível criar objetos/instãncias diretamente â partir
+de classes abstratas. */
+// $conteudo = new Conteudo ("Senhor dos aneis", "Fantasia", 2001);
+// var_dump($conteudo);
 ?>
 
 <!DOCTYPE html>
