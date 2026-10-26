@@ -11,14 +11,17 @@ $filme3 = new Filme("Os Vingadores", "Super-herói", 2012, 100);
 $serie1 = new Serie("Hora de Aventura", "Fantasia", 1999, 9);
 $serie2 = new Serie("The flash", "Ação", 2012, 10);
 
-$filmes = [$filme1, $filme2, $filme3];
-$series = [$serie1, $serie2];
+//$filmes = [$filme1, $filme2, $filme3];
+//$series = [$serie1, $serie2];
 
 /* Como a classe Conteudo foi definida como abstrata, a linha abaixo não
 funcionará pois não é possível criar objetos/instãncias diretamente à partir
 de classes abstratas. */
 // $conteudo = new Conteudo ("Senhor dos aneis", "Fantasia", 2001);
 // var_dump($conteudo);
+
+// Lista com objetos Filme e Serie
+$conteudos = [$filme1, $filme2, $serie1, $serie2];
 ?>
 
 <!DOCTYPE html>
@@ -39,34 +42,16 @@ de classes abstratas. */
             <p>Três filmes para descobrir, rever e se divertir</p>
         </header>
 
-        <div class="filmes">
-            <?php foreach ($filmes as $filme): ?>
-                <article class="card-filme">
-                    <span class="genero"><?= $filme->getGenero() ?></span>
-                    <h2> <?= $filme->getTitulo() ?></h2>
-                    <p class="ano">Lançamento: <?= $filme->getAno() ?></p>
+        <div class="conteudos">
+            <?php foreach ($conteudos as $conteudo): ?>
+                <article class="card-conteudo">
+                    <span class="genero"><?= $conteudo->getGenero() ?></span>
+                    <h2> <?= $conteudo->getTitulo() ?></h2>
+                    <p class="ano">Lançamento: <?= $conteudo->getAno() ?></p>
 
-                    <p><?= $filme->getDescricao() ?></p>
+                    <p><?= $conteudo->getDescricao() ?></p>
 
-                    <?php if($filme->ehClassico()): ?>
-                        <span class="classico">Classico</span>
-                    <?php endif; ?>
-                </article>
-            <?php endforeach; ?>
-        </div>
-        
-        <br>
-
-        <div class="series">
-            <?php foreach ($series as $serie): ?>
-                <article class="card-serie">
-                    <span class="genero"><?= $serie->getGenero() ?></span>
-                    <h2> <?= $serie->getTitulo() ?></h2>
-                    <p class="ano">Lançamento: <?= $serie->getAno() ?></p>
-
-                    <p><?= $serie->getDescricao() ?></p>
-
-                    <?php if($serie->ehClassico()): ?>
+                    <?php if($conteudo->ehClassico()): ?>
                         <span class="classico">Classico</span>
                     <?php endif; ?>
                 </article>
