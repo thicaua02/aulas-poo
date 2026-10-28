@@ -63,7 +63,13 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                
+                <li>Classe Abstrata: <b>Conteudo</b></li>
+                <li>Método Abstrato: <b>getDescricao()</b></li>
+                <li>Impossibilidade de instanciar diretamente uma classe abstrata</li>
+                <li>Obriga a implementação do método abstrato pelas classes filhas Filme
+                e Serie</li>
+                <li>Polimorfismo: a mesma chamada a <b>getDescricao()</b> utiliza a 
+                implementação de cada classe</li>
             </ul>
         </div>
 
