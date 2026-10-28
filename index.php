@@ -1,5 +1,16 @@
 <?php
+require_once "./src/Notificador.php";
+require_once "./src/NotificadorEmail.php";
+require_once "./src/NotificadorSMS.php";
 
+// Criando os objetos a partir das classes
+$notificadorPorEmail = new NotificadorEmail();
+$notificadorPorSMS = new NotificadorSMS();
+
+$notificadores = [
+    $notificadorPorEmail, 
+    $notificadorPorSMS
+];    
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +32,13 @@
         </header>
 
         <div class="conteudos">
-           <article class="card-conteudo">
-            
-           </article>
+            <?php $conteudoDaMensagem = "Seu pedido 123abc foi confirmado." ?>
+            <?php foreach ($notificadores as $notificador): ?>
+                <article class="card-conteudo">
+                    <h2>Notificação sobre o pedido</h2>
+                    <p><?= $notificador->enviar($conteudoDaMensagem); ?></p>
+                </article>
+            <?php endforeach; ?>
         </div>
 
         <hr>
