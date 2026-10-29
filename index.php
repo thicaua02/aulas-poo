@@ -45,6 +45,10 @@ $pedidos = [
                     <p>Status: 
                         <b class="destaque"> <?= $pedido->getStatus()->value ?></b>
                     </p>
+                    <?php
+                        $mensagem = "Seu pedido #" . $pedido->getNumero() . " está com o status: " . $pedido->getStatus()->value
+                    ?>
+                    <p><small><?= $notificadorPorEmail->enviar($mensagem); ?></small></p>
                 </article>
             <?php endforeach; ?>
         </div>
