@@ -1,16 +1,26 @@
 <?php
+
 require_once "./src/Notificador.php";
+
 require_once "./src/NotificadorEmail.php";
+
 require_once "./src/NotificadorSMS.php";
 
-// Criando os objetos a partir das classes
 $notificadorPorEmail = new NotificadorEmail();
-$notificadorPorSMS = new NotificadorSMS();
+$notificadorPorSMS =  new NotificadorSMS();
 
-$notificadores = [
-    $notificadorPorEmail, 
-    $notificadorPorSMS
-];    
+// Pedido 123abc
+
+$emailPedido1 = $notificadorPorEmail->enviar("Seu pedido 123abc foi confirmado");
+$smsPedido1 = $notificadorPorSMS->enviar("Seu pedido 123abc foi confirmado");
+
+$emailPedido2 = $notificadorPorEmail->enviar("Seu pedido 987xyz foi confirmado");
+$smsPedido2 = $notificadorPorSMS->enviar("Seu pedido 987xyz foi confirmado");
+
+$emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 567ghi foi confirmado");
+$smsPedido3 = $notificadorPorSMS->enviar("Seu pedido 567ghi foi confirmado");
+
+// Pedido
 ?>
 
 <!DOCTYPE html>
@@ -32,26 +42,37 @@ $notificadores = [
         </header>
 
         <div class="conteudos">
-            <?php $conteudoDaMensagem = "Seu pedido 123abc foi confirmado." ?>
-            <?php foreach ($notificadores as $notificador): ?>
-                <article class="card-conteudo">
-                    <h2>Notificação sobre o pedido</h2>
-                    <p><?= $notificador->enviar($conteudoDaMensagem); ?></p>
-                </article>
-            <?php endforeach; ?>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 123abc</h2>
+                <p><?= $emailPedido1 ?></p>
+                <p><?= $smsPedido1 ?></p>
+            </article>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 987xyz</h2>
+                <p><?= $emailPedido2 ?></p>
+                <p><?= $smsPedido2 ?></p>
+            </article>
+
+            <article class="card-conteudo">
+                <h2>Notificações: Pedido 567ghi</h2>
+                <p><?= $emailPedido3 ?></p>
+                <p><?= $smsPedido3 ?></p>
+            </article>
         </div>
 
         <hr>
 
+        <section class="card-conteudo">
+            <h2>Resumo/Total dos envios de notificações</h2>
+            <p>E-mails enviados: <b><?= NotificadorEmail::getQuantoidadeEnviada(); ?></b></p>
+            <p>SMS enviados: <b><?= NotificadorSMS::getQuantoidadeEnviada(); ?></b></p>
+
+        </section>
+
         <div class="assuntos-estudados">
-            <h2>Assuntos estudados</h2>
-            <ul>
-               <li>Interface <b>Notificador</b> como um contrato de comportamentos (métodos)</li>
-               <li>Definição do método <b>enviar (string $mensagem): </b> na Interface</li>
-               <li>Aplicação da interface com <b>implements</b> nas classes: <b>NotificadorEmail</b> e <b>NotificadorSMS</b></li>
-               <li>Implementação do método: <b>enviar</b> em cada classe</li>
-               <li>Polimorfismo: a mesma chamada a <b>enviar</b> utiliza a implementação de cada classe.</li>
-            </ul>
+
         </div>
 
     </div>
