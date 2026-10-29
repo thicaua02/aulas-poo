@@ -21,6 +21,11 @@ $emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 567ghi foi confirmado")
 $smsPedido3 = $notificadorPorSMS->enviar("Seu pedido 567ghi foi confirmado");
 
 // Pedido
+
+// *************
+
+$notificadorPorEmailTeste2 = new NotificadorEmail();
+$notificadorPorEmailTeste3 = new NotificadorEmail();
 ?>
 
 <!DOCTYPE html>
@@ -66,13 +71,17 @@ $smsPedido3 = $notificadorPorSMS->enviar("Seu pedido 567ghi foi confirmado");
 
         <section class="card-conteudo">
             <h2>Resumo/Total dos envios de notificações</h2>
-            <p>E-mails enviados: <b><?= NotificadorEmail::getQuantoidadeEnviada(); ?></b></p>
-            <p>SMS enviados: <b><?= NotificadorSMS::getQuantoidadeEnviada(); ?></b></p>
+            <p>E-mails enviados: <b><?= NotificadorEmail::getQuantidadeEnviada(); ?></b></p>
+            <p>SMS enviados: <b><?= NotificadorSMS::getQuantidadeEnviada(); ?></b></p>
 
         </section>
 
         <div class="assuntos-estudados">
-
+            <li>Propriedade estática usando <b>static</b></li>
+            <li>Métodos estáticos usando <b>static</b></li>
+            <li>Acesso a recursos estáticos com <b>::</b></li>
+            <li>Acesso a recursos estáticos da própria classe usando <b>self</b></li>
+            <li>Diferença entre usar recursos estáticos de classe e recrusos de objeto.</li>
         </div>
 
     </div>
