@@ -1,14 +1,10 @@
 <?php
+use App\Saudacao;
 use App\Pedidos\Pedido;
 use App\Pedidos\StatusPedido;
 use App\Relatorios\Pedido as RelatorioPedido;
 
-// Atualizando os caminhos físicos (pasta/arquivo.php)
-require_once "./src/Notificacoes/Notificador.php";
-require_once "./src/Notificacoes/NotificadorEmail.php";
-require_once "./src/Pedidos/StatusPedido.php"; // a Enumeração DEVE vir primeiro
-require_once "./src/Pedidos/Pedido.php"; // pois a classe Pedido precisa dela
-require_once "./src/Relatorios/Pedido.php";
+require_once "vendor/autoload.php";
 
 // Veja que nessa primeira forma, precisamos passar o nome completo da classe.
 $notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
@@ -26,6 +22,9 @@ $pedidos = [
     $pedido3, 
     $pedido4
 ];
+
+$saudacao = new Saudacao();
+echo $saudacao->cumprimentar();
 ?>
 
 <!DOCTYPE html>
