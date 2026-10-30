@@ -1,4 +1,6 @@
 <?php
+use App\Pedidos\Pedido;
+use App\Pedidos\StatusPedido;
 
 // Atualizando os caminhos físicos (pasta/arquivo.php)
 require_once "./src/Notificacoes/Notificador.php";
@@ -8,8 +10,6 @@ require_once "./src/Pedidos/Pedido.php"; // pois a classe Pedido precisa dela
 
 // Veja que nessa primeira forma, precisamos passar o nome completo da classe.
 $notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
-var_dump($notificadorPorEmail);
-die();
 
 $pedido1 = new Pedido(1000, "Fulano da Silva", StatusPedido::Pendente);
 $pedido2 = new Pedido(1001, "Beltrano Souza", StatusPedido::Pendente);
@@ -64,7 +64,7 @@ $pedidos = [
 
         <section class="card-conteudo">
             <h2>Resumo/Total dos envios de notificações</h2>
-            <p>E-mails enviados: <b><?= NotificadorEmail::getQuantidadeEnviada(); ?></b></p>
+            <p>E-mails enviados: <b><?= APP\Notificacoes\NotificadorEmail::getQuantidadeEnviada(); ?></b></p>
         </section>
 
         <div class="assuntos-estudados">
