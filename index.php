@@ -11,6 +11,8 @@ $pedido2 = new Pedido(1001, "Beltrano Souza", StatusPedido::Pendente);
 $pedido3 = new Pedido(1004, "José da Silva", StatusPedido::AguardandoPagamento);
 $pedido4 = new Pedido(1005, "Mônica Santos", StatusPedido::SaiuParaEntrega);
 
+$pedido3->setStatus(StatusPedido::Pago);
+
 $pedidos = [
     $pedido1, 
     $pedido2, 
@@ -58,16 +60,16 @@ $pedidos = [
         <section class="card-conteudo">
             <h2>Resumo/Total dos envios de notificações</h2>
             <p>E-mails enviados: <b><?= NotificadorEmail::getQuantidadeEnviada(); ?></b></p>
-            <p>SMS enviados: <b><?= NotificadorSMS::getQuantidadeEnviada(); ?></b></p>
-
         </section>
 
         <div class="assuntos-estudados">
-            <li>Propriedade estática usando <b>static</b></li>
-            <li>Métodos estáticos usando <b>static</b></li>
-            <li>Acesso a recursos estáticos com <b>::</b></li>
-            <li>Acesso a recursos estáticos da própria classe usando <b>self</b></li>
-            <li>Diferença entre usar recursos estáticos de classe e recrusos de objeto.</li>
+            <h2>Assuntos estudantes</h2>
+            <ul>
+                <li>Enumerações com um conjunto definido de opções usando <b>case</b></li>
+                <li>Casos associados a valores do tipo <b>string</b></li>
+                <li>Acesso a um caso com <b>StatusPedido::NomeDoCaso</b></li>
+                <li>Acesso ao valor/texto do caso com <b>->value</b></li>
+            </ul>
         </div>
 
     </div>
